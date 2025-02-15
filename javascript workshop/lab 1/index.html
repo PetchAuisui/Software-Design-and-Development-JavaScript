@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- ปุ่มที่ 1: Inline JavaScript -->
+    <button onclick="alert('นายศิวาภัทร อุยสุย')">ปุ่มที่ 1</button>
+
+    <!-- ปุ่มที่ 2: Internal JavaScript -->
+    <button id="btn2">ปุ่มที่ 2</button>
+
+    <!-- ปุ่มที่ 3: External JavaScript -->
+    <button id="btn3">ปุ่มที่ 3</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            let today = new Date().toLocaleDateString('th-TH');
+            alert('วันที่ปัจจุบัน: ' + today);
+        };
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

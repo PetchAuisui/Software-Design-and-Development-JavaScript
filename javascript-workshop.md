@@ -64,6 +64,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 </html>
 ```
 
+
 ### แบบฝึกปฏิบัติที่ 1: การใช้งาน JavaScript เบื้องต้น
 
 1. สร้างหน้าเว็บที่มีปุ่ม 3 ปุ่ม:
@@ -75,11 +76,48 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
    - มีช่องกรอกข้อความ
    - มีปุ่มเมื่อคลิกแล้วจะแสดงข้อความที่กรอกในช่องข้อความ  (สามารถใช้ document.getElementById('id ของ textbox').value เพื่อดึงข้อมูลในช่อง)
 ### บันทึกผลการทดลอง 
+- HTML
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ทดลอง JavaScript</title>
+</head>
+<body>
+    <!-- ปุ่มที่ 1: Inline JavaScript -->
+    <button onclick="alert('นายศิวาภัทร อุยสุย')">ปุ่มที่ 1</button>
+
+    <!-- ปุ่มที่ 2: Internal JavaScript -->
+    <button id="btn2">ปุ่มที่ 2</button>
+
+    <!-- ปุ่มที่ 3: External JavaScript -->
+    <button id="btn3">ปุ่มที่ 3</button>
+
+    <!-- Internal JavaScript -->
+    <script>
+        document.getElementById('btn2').onclick = function() {
+            let today = new Date().toLocaleDateString('th-TH');
+            alert('วันที่ปัจจุบัน: ' + today);
+        };
+    </script>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+```
+- JavaScript
+```javascript
+document.getElementById('btn3').onclick = function() {
+    let timeNow = new Date().toLocaleTimeString('th-TH');
+    alert('เวลาปัจจุบัน: ' + timeNow);
+};
 ```
 [รูปผลการทดลองที่ 1]
-  
+![lab1](Screenshot/1.1.png)
+![lab1](Screenshot/1.2.png)
+![lab1](Screenshot/1.3.png)
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 

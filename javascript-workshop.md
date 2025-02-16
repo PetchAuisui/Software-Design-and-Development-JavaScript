@@ -113,11 +113,18 @@ document.getElementById('btn3').onclick = function() {
     let timeNow = new Date().toLocaleTimeString('th-TH');
     alert('เวลาปัจจุบัน: ' + timeNow);
 };
+
+function showText() {
+    let text = document.getElementById('textBox').value;
+    document.getElementById('output').innerText = "ข้อความที่ป้อน: " + text;
+};
+
 ```
 [รูปผลการทดลองที่ 1]
 ![lab1](Screenshot/1.1.png)
 ![lab1](Screenshot/1.2.png)
 ![lab1](Screenshot/1.3.png)
+![lab1](Screenshot/1.4.png)
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
 

@@ -65,6 +65,7 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ```
 
 
+
 ### แบบฝึกปฏิบัติที่ 1: การใช้งาน JavaScript เบื้องต้น
 
 1. สร้างหน้าเว็บที่มีปุ่ม 3 ปุ่ม:
@@ -177,7 +178,8 @@ let person = {
 1. สร้างตัวแปรเก็บข้อมูล รหัสนักศึกษา ชื่อนักศึกษา คะแนนสอบกลางภาค, คะแนนสอบปลายภาค โดยเลือกใช้ let หรือ const 
 2. สร้าง Object สำหรับเก็บข้อมูลนักศึกษา  ประกอบด้วยข้อมูล รหัสนักศึกษา, ชื่อ, สาขาวิชา, เกรดเฉลี่ย
 
-### บันทึกผลการทดลอง 2.1
+### บันทึกผลการทดลอง 2.1\
+- HTML
 ```html
 <!DOCTYPE html>
 <html lang="th">
@@ -201,6 +203,33 @@ let person = {
     <p>คะแนนเฉลี่ย: <span id="averageScore"></span></p>
 </body>
 </html>
+```
+- JavaScript
+```js
+let studentID = "67030351";
+        let studentName = "ศิวาภัทร อุยสุย";
+        let midtermScore = 40;
+        let finalScore = 45;
+        let totalScore = midtermScore + finalScore;
+        let averageScore = (midtermScore + finalScore)/2;
+
+        // ใช้ Object เก็บข้อมูลนักศึกษา
+        const student = {
+            id: studentID,
+            name: studentName,
+            major: "เทคโนโลยีคอมพิวเตอร์",
+            gpa: 3.75
+        };
+
+        // แสดงผลข้อมูลใน HTML
+        document.getElementById("studentID").innerText = student.id;
+        document.getElementById("studentName").innerText = student.name;
+        document.getElementById("midtermScore").innerText = midtermScore;
+        document.getElementById("finalScore").innerText = finalScore;
+        document.getElementById("major").innerText = student.major;
+        document.getElementById("gpa").innerText = student.gpa;
+        document.getElementById("totalScore").innerText = totalScore
+        document.getElementById("averageScore").innerText = averageScore
 ```
 [รูปผลการทดลองที่ 2.1]
 ![lab2.1](Screenshot/2.1.png)
@@ -253,6 +282,7 @@ number /= 2;          // เท่ากับ number = number / 2
 2. เขียนโปรแกรม กำหนดชื่อสินค้า ราคาสินค้า คำนวณราคาสินค้าที่รวม VAT 7% แล้วแสดงผลการคำนวณ
 
 ### บันทึกผลการทดลอง 2.2
+- HTML
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -280,6 +310,30 @@ number /= 2;          // เท่ากับ number = number / 2
     </div>
 </body>
 </html>
+```
+- JavaScript
+```js
+function calculateAverage() {
+    let score1 = parseFloat(document.getElementById("score1").value) || 0;
+    let score2 = parseFloat(document.getElementById("score2").value) || 0;
+    let score3 = parseFloat(document.getElementById("score3").value) || 0;
+    
+    let average = (score1 + score2 + score3) / 3;
+    document.getElementById("averageResult").innerText = "คะแนนเฉลี่ย: " + average.toFixed(2);
+}
+
+
+function calculateVAT() {
+    let productName = document.getElementById("productName").value;
+    let productPrice = parseFloat(document.getElementById("productPrice").value) || 0;
+
+    let vat = productPrice * 0.07;
+    let totalPrice = productPrice + vat;
+
+    document.getElementById("vatResult").innerText = 
+        `สินค้า: ${productName}\nราคาสินค้า: ${productPrice.toFixed(2)} บาท\nVAT 7%: ${vat.toFixed(2)} บาท\nราคารวม: ${totalPrice.toFixed(2)} บาท`;
+}
+
 ```
 [รูปผลการทดลองที่ 2.2]
 ![lab2.2](Screenshot/2.2.png)
@@ -412,6 +466,7 @@ for (let i = 1; i <= 5; i++) {
 4. เขียนโปรแกรมกำหนดอายุ และตรวจสอบช่วงวัยตามอายุที่กำหนด (กำหนดอายุแต่ละช่วงวัย วัยเด็ก วัยรุ่น วัยผู้ใหญ่)
 
 ### บันทึกผลการทดลอง 2.3
+- HTML
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -443,6 +498,53 @@ for (let i = 1; i <= 5; i++) {
     <p id="result5"></p>
 </body>
 </html>
+```
+- JavaScript
+```js
+function checkEvenOdd() {
+    let num = document.getElementById("numberInput").value;
+    let result = (num % 2 === 0) ? "เลขคู่" : "เลขคี่";
+    document.getElementById("result1").innerText = `ผลลัพธ์: ${result}`;
+}
+
+function multiplicationTable() {
+    let result2 = "<b>แม่ 2</b><br>";
+    for (let i = 1; i <= 12; i++) {
+        result2 += `2 x ${i} = ${2 * i}<br>`;
+    }
+    document.getElementById("result2").innerHTML = result2;
+    
+    let result3 = "<b>แม่ 3</b><br>";
+    let j = 1;
+    while (j <= 12) {
+        result3 += `3 x ${j} = ${3 * j}<br>`;
+        j++;
+    }
+    document.getElementById("result3").innerHTML = result3;
+}
+
+function countdown() {
+    let result = "";
+    for (let i = 10; i >= 1; i--) {
+        result += i + " ";
+    }
+    document.getElementById("result4").innerText = result;
+}
+
+function checkAge() {
+    let age = document.getElementById("ageInput").value;
+    let stage = "";
+    if (age >= 0 && age <= 12) {
+        stage = "วัยเด็ก";
+    } else if (age >= 13 && age <= 19) {
+        stage = "วัยรุ่น";
+    } else if (age >= 20) {
+        stage = "วัยผู้ใหญ่";
+    } else {
+        stage = "กรุณาป้อนอายุที่ถูกต้อง";
+    }
+    document.getElementById("result5").innerText = `ช่วงวัย: ${stage}`;
+}
 ```
 [รูปผลการทดลองที่ 2.3]
 ![lab2.3](Screenshot/2.3.png)
@@ -547,6 +649,9 @@ process(function() {
     console.log("Function นี้ทำงานทันทีที่ถูกประกาศ");
 })();
 ```
+```js
+
+```
 
 
 ### 📝 แบบทดสอบที่ 2.4.1: Functions
@@ -555,6 +660,7 @@ process(function() {
 3. เขียน function ตรวจสอบรหัสผ่านว่ามีความยาวมากกว่า 8 ตัวอักษรหรือไม่
 
 ### บันทึกผลการทดลอง 2.4.1
+- HTML
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -586,6 +692,43 @@ process(function() {
     <p id="result5"></p>
 </body>
 </html>
+```
+- JavaScript
+```js
+function calculateBMI() {
+    let weight = parseFloat(document.getElementById("weight").value);
+    let height = parseFloat(document.getElementById("height").value) / 100;
+    if (weight > 0 && height > 0) {
+        let bmi = weight / (height * height);
+        document.getElementById("bmiResult").innerText = "BMI ของคุณคือ: " + bmi.toFixed(2);
+    } else {
+        document.getElementById("bmiResult").innerText = "กรุณากรอกข้อมูลให้ถูกต้อง";
+    }
+}
+
+function greetUser() {
+    let name = document.getElementById("name").value;
+    let age = parseInt(document.getElementById("age").value);
+    let message = "สวัสดี " + name + "! ";
+    
+    if (age < 12) {
+        message += "คุณยังเป็นเด็กน้อยอยู่เลย!";
+    } else if (age < 20) {
+        message += "คุณเป็นวัยรุ่นไฟแรง!";
+    } else {
+        message += "คุณเป็นผู้ใหญ่แล้ว ดูแลสุขภาพด้วยนะ!";
+    }
+    document.getElementById("greeting").innerText = message;
+}
+
+function checkPassword() {
+    let password = document.getElementById("password").value;
+    if (password.length > 8) {
+        document.getElementById("passwordResult").innerText = "รหัสผ่านปลอดภัย";
+    } else {
+        document.getElementById("passwordResult").innerText = "รหัสผ่านต้องมีมากกว่า 8 ตัวอักษร";
+    }
+}
 ```
 [รูปผลการทดลองที่ 2.4.1]
 ![lab2.4.1](Screenshot/2.4.1.png)
@@ -627,6 +770,7 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 3. เขียน function ตรวจสอบรหัสผ่านว่ามีความยาวมากกว่า 8 ตัวอักษรหรือไม่
 
 ### บันทึกผลการทดลอง 2.4.2
+- HTML
 ```html
 <!DOCTYPE html>
 <html lang="th">
@@ -661,8 +805,40 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
     <p id="passwordMessage"></p>
 </body>
 </html>
-
 ```
+- JavaScript
+```js
+const calculateBMI = () => {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value) / 100; // แปลงส่วนสูงจากเซนติเมตรเป็นเมตร
+    const bmi = weight / (height * height);
+    document.getElementById('bmiResult').innerText = `BMI ของคุณคือ: ${bmi.toFixed(2)}`;
+}
+  
+const greetPerson = () => {
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    let greeting = '';
+  
+    if (age < 18) {
+      greeting = `สวัสดีคุณ ${name}! คุณยังเด็กอยู่ครับ/ค่ะ`;
+    } else if (age >= 18 && age < 60) {
+      greeting = `สวัสดีคุณ ${name}! ยินดีที่ได้รู้จักครับ/ค่ะ`;
+    } else {
+      greeting = `สวัสดีคุณ ${name}! อายุเยอะแล้ว ขอให้สุขภาพดีนะครับ/ค่ะ`;
+    }
+  
+    document.getElementById('greetingMessage').innerText = greeting;
+  }
+  
+const checkPassword = () => {
+    const password = document.getElementById('password').value;
+    const message = password.length > 8 ? "รหัสผ่านปลอดภัย" : "รหัสผ่านต้องมีความยาวมากกว่า 8 ตัวอักษร";
+    document.getElementById('passwordMessage').innerText = message;
+  }
+  
+```
+
 [รูปผลการทดลองที่ 2.4.2]
 ![lab2.4.2](Screenshot/2.4.2.png)
 

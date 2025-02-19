@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>1.คำนวณ BMI</h2>
+    <label>น้ำหนัก (kg): <input type="number" id="weight"></label>
+    <label>ส่วนสูง (cm): <input type="number" id="height"></label>
+    <button onclick="calculateBMI()">คำนวณ</button>
+    <p id="bmiResult"></p>
+
+    <h2>2.ทักทายตามอายุ</h2>
+    <label>ชื่อ: <input type="text" id="name"></label>
+    <label>อายุ: <input type="number" id="age"></label>
+    <button onclick="greetUser()">ทักทาย</button>
+    <p id="greeting"></p>
+
+    <h2>3.ตรวจสอบรหัสผ่าน</h2>
+    <label>รหัสผ่าน: <input type="password" id="password"></label>
+    <button onclick="checkPassword()">ตรวจสอบ</button>
+    <p id="passwordResult"></p>
+</body>
+</html>

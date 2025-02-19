@@ -628,10 +628,43 @@ console.log("เลขคู่:", evenNumbers); // [2, 4]
 
 ### บันทึกผลการทดลอง 2.4.2
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+    <h1>คำนวณค่า BMI</h1>
+    <label for="weight">น้ำหนัก (กิโลกรัม): </label>
+    <input type="number" id="weight">
+    <label for="height">ส่วนสูง (เมตร): </label>
+    <input type="number" step="0.01" id="height">
+
+    <button onclick="calculateBMI()">คำนวณ BMI</button>
+    <p id="bmiResult"></p>
+
+    <h1>ทักทายตามอายุ</h1>
+    <label for="name">ชื่อ: </label>
+    <input type="text" id="name">
+    <label for="age">อายุ: </label>
+    <input type="number" id="age">
+    <button onclick="greetPerson()">ทักทาย</button>
+    <p id="greetingMessage"></p>
+
+    <h1>ตรวจสอบรหัสผ่าน</h1>
+    <label for="password">รหัสผ่าน: </label>
+    <input type="password" id="password">
+    <button onclick="checkPassword()">ตรวจสอบรหัสผ่าน</button>
+    <p id="passwordMessage"></p>
+</body>
+</html>
+
 ```
 [รูปผลการทดลองที่ 2.4.2]
-
+![lab2.4.2](Screenshot/2.4.2.png)
 
 ## การทดลองที่ 3 : การใช้ JavaScript กับ HTML และ CSS
 ### การทดลองที่ 3.1 การสร้างปุ่มและจัดการ Event ด้วย JavaScript

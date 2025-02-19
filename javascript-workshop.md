@@ -413,10 +413,39 @@ for (let i = 1; i <= 5; i++) {
 
 ### บันทึกผลการทดลอง 2.3
 ```html
-[บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="js/script.js"></script>
+   
+    <title>Document</title>
+</head>
+<body>
+    <h2>1. ตรวจสอบเลขคู่หรือเลขคี่</h2>
+    <input type="number" id="numberInput" placeholder="ป้อนตัวเลข">
+    <button onclick="checkEvenOdd()">ตรวจสอบ</button>
+    <p id="result1"></p>
+
+    <h2>2. ตารางสูตรคูณ</h2>
+    <button onclick="multiplicationTable()">แสดงตารางสูตรคูณ</button>
+    <p id="result2"></p>
+    <p id="result3"></p>
+
+    <h2>3. นับถอยหลัง</h2>
+    <button onclick="countdown()">เริ่มนับถอยหลัง</button>
+    <p id="result4"></p>
+
+    <h2>4. ตรวจสอบช่วงวัย</h2>
+    <input type="number" id="ageInput" placeholder="ป้อนอายุ">
+    <button onclick="checkAge()">ตรวจสอบ</button>
+    <p id="result5"></p>
+</body>
+</html>
 ```
 [รูปผลการทดลองที่ 2.3]
-
+![lab2.3](Screenshot/2.3.png)
 ### 2.4 Functions และ Arrow Functions
 
 Functions คือกลุ่มคำสั่งที่สามารถนำมาใช้ซ้ำได้ ใน JavaScript มีวิธีการเขียน function 2 แบบหลักๆ:
